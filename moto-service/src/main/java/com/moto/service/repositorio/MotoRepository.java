@@ -9,7 +9,7 @@ import com.moto.service.entidades.Moto;
 
 @Repository
 public interface MotoRepository extends JpaRepository<Moto, Integer>{
-	
-	List<Moto> findByUsuarioId(int usuarioId);
 
+	List<Moto> findByUsuarioId(int usuarioId);
+	
 }

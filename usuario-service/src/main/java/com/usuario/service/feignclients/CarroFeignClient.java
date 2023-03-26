@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.usuario.service.modelos.Moto;
+import com.usuario.service.modelos.Carro;
 
-@FeignClient(name = "moto-service",url = "http://localhost:8003")
-@RequestMapping("/moto")
-public interface MotoFeignClient {
+@FeignClient(name = "carro-service",url = "http://localhost:8002")
+@RequestMapping("/carro")
+public interface CarroFeignClient {
 
 	@PostMapping()
-	public Moto save(@RequestBody Moto moto);
+	public Carro save(@RequestBody Carro carro);
 	
 	@GetMapping("/usuario/{usuarioId}")
-	public List<Moto> getMotos(@PathVariable("usuarioId") int usuarioId);
+	public List<Carro> getCarros(@PathVariable("usuarioId") int usuarioId);
 }

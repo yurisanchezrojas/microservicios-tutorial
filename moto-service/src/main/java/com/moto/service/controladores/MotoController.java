@@ -17,7 +17,7 @@ import com.moto.service.servicios.MotoService;
 @RestController
 @RequestMapping("/moto")
 public class MotoController {
-	
+
 	@Autowired
 	private MotoService motoService;
 	
@@ -26,26 +26,23 @@ public class MotoController {
 		List<Moto> motos = motoService.getAll();
 		if(motos.isEmpty()) {
 			return ResponseEntity.noContent().build();
-			
 		}
 		return ResponseEntity.ok(motos);
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<Moto> obtenerMoto(@PathVariable("id") int id){
-		Moto moto= motoService.getMotoById(id);
+		Moto moto = motoService.getMotoById(id);
 		if(moto == null) {
 			return ResponseEntity.notFound().build();
 		}
 		return ResponseEntity.ok(moto);
-		
 	}
 	
 	@PostMapping
 	public ResponseEntity<Moto> guardarMoto(@RequestBody Moto moto){
 		Moto nuevaMoto = motoService.save(moto);
 		return ResponseEntity.ok(nuevaMoto);
-		
 	}
 	
 	@GetMapping("/usuario/{usuarioId}")
@@ -55,20 +52,6 @@ public class MotoController {
 			return ResponseEntity.noContent().build();
 		}
 		return ResponseEntity.ok(motos);
-		
 	}
 	
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
