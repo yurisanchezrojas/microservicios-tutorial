@@ -3,11 +3,9 @@ package com.usuario.service.servicio;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import com.usuario.service.entidades.Usuario;
 import com.usuario.service.feignclients.CarroFeignClient;
 import com.usuario.service.feignclients.MotoFeignClient;
